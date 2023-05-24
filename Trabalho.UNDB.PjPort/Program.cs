@@ -47,8 +47,7 @@ while (_loop1) {
             Console.Write("Adicionar Senha:");
             string addPassaword = Console.ReadLine();
             // Ser adicionado ao banco
-            User.Add(addUser);
-            Password.Add(addPassaword);
+            Imp.Save(addUser, addPassaword);
             break;
 
         case 2:
