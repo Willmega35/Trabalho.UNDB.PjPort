@@ -75,15 +75,16 @@ while (_loop1)
             if (trueSearch)
             {
                 Console.WriteLine("Usuario Encontrado com suacesso.");
-                _loop1 = true;
                 _user = userCastr;
+                _loop1 = false;
+                _loop2 = true;
             }
             else
             {
                 Console.WriteLine($"O usuário {userCastr}");
             }
 
-            return;
+            break;
 
         case 3:
             string[] user = Imp.Load(newFile);
@@ -125,6 +126,7 @@ while (_loop2)
     Console.WriteLine($"Seja Bem vindo {_user}");
 
     //Opções de acesso do usuário
+    Console.WriteLine("1-Adcionar porto\n2-");
 
 
     Console.ReadKey();
