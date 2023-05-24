@@ -70,18 +70,16 @@ while (_loop1) {
             break;
 
         case 3:
-            //Exibir todos os Usuários cadastrados.
-            Console.WriteLine("Usuários Cadastrados:");
-            //imprimir os usuários qu que tem 
             string[] user = Imp.Load(newFile);
+            //Exibir todos os Usuários cadastrados.
+            Console.WriteLine($"Usuários Cadastrados: {user.Length}");
+            //imprimir os usuários qu que tem 
 
             if (user.Length == 0) {
                 Console.WriteLine("Nenhum usuario Cadastrado");
-                return;
             }
 
-            for (int i = 0; i < user.Length; i++) {
-                string line = user[i];
+            foreach (string line in user) {
                 string[] part = line.Split(';');
                 string nameUser = part[0];
 
