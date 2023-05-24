@@ -101,69 +101,8 @@ while (_loop1) {
 //Tela de usuario: aqui posta o Nome usuario imprimi quais opções ele possui aqui dentro da área.
 while (_loop2) {
     // Mensagem de boas vindas.
-    Console.WriteLine($"BEM VINDO {_user}");
-    Console.WriteLine(separar);
 
-    // Opções de para o Usuário.
-    Console.WriteLine("Escolha uma das seguintes opções:");
-    Console.WriteLine("1- Portos deligados\n2- Portos publicos\n3Sair");
-
-    //Recebe o valor de um determinado das opções logo acima.
-    int request = Convert.ToInt32(Console.ReadLine());
-
-    //Ele retorna o Valor para o usuário.
-    switch (request) {
-        case 1:
-            Console.WriteLine("Escolha o porto:");
-            Console.WriteLine("1-PE\n2-SC\n3-MA\n4-PB\n5-SP\n6-PR\n7-RS\n8-RO\n9-AP\n10-RJ\n11-AM");
-            int requestHarbor = Convert.ToInt32(Console.ReadLine());
-
-            switch (requestHarbor) {
-                case 1:
-                    double pePorc = 2.0 / 35.0 * 100.0;
-
-                    Console.WriteLine($"Porcentagem {pePorc}");
-                    break;
-
-                case 2:
-                    double scPorc = 4.0 / 35 * 100.0;
-
-                    Console.WriteLine($"Porcentagem = {scPorc}");
-                    break;
-
-                case 3:
-                    double maPorc = 1.0 / 35 * 100.0;
-
-                    Console.WriteLine($"Porcentagem = {maPorc}");
-                    break;
-
-                case 4:
-                    double pbPorc = 1.0 / 35 * 100.0;
-
-                    Console.WriteLine($"Porcentagem = {pbPorc}");
-                    break;
-
-                case 5:
-                    double spPorc = 1.0 / 35 * 100.0;
-
-                    Console.WriteLine($"Porcentagem = {spPorc}");
-                    break;
-
-                case 6:
-                    double prPorc = 2.0 / 35 * 100.0;
-
-                    Console.WriteLine($"Porcentagem = {prPorc}");
-                    break;
-
-                case 7:
-                    double rsPorc = 3.0 / 35 * 100.0;
-
-                    Console.WriteLine($"Porcentagem = {rsPorc}");
-                    break;
-            }
-            break;
-    }
-
+    //Opções de acesso do usuário
 
 
 
