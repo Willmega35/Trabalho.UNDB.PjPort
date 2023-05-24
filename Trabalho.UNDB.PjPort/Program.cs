@@ -1,11 +1,15 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using Trabalho.UNDB.PjPort;
 
+string newFile = @"C:\Users\Windows 10\Documents\Trabalho-Csharp\Trabalho-de-Faculdade\Dados\Resister.txt"
 // Separador para ser usado.
 string separar = "-------------------------------------------------------------------------------";
 
+Import Imp = new Import(newFile);
+
 // Aqui vai fica parte dos projetos onde armazena o Usuário e Senha
-List<string> User = new() { "Willard", "Hugo", "Mackley" };
+List<string> User = new();
 List<string> Password = new();
 
 //Contralador da interface no sistema.
