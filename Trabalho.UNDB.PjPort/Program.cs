@@ -77,10 +77,16 @@ while (_loop1) {
 
             if (user.Length == 0) {
                 Console.WriteLine("Nenhum usuario Cadastrado");
+                return;
             }
-            
-            foreach(string line in user)
-                Console.WriteLine(line);
+
+            for (int i = 0; i < user.Length; i++) {
+                string line = user[i];
+                string[] part = line.Split(';');
+                string nameUser = part[0];
+
+                Console.WriteLine(nameUser);
+            }
             Console.ReadKey();//Aqui segura para usuari ver a opções. 
             Console.WriteLine(separar);
             break;

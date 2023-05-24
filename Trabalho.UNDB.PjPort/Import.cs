@@ -13,7 +13,7 @@ namespace Trabalho.UNDB.PjPort {
 
         public void Save (string Name, string Password) { 
             using(StreamWriter writer = File.AppendText(this.fileResister)) {
-                writer.WriteLine($"Nome:{Name} Senha:{Password}");
+                writer.WriteLine($"Nome:{Name}; Senha:{Password}");
             }
         }
 
