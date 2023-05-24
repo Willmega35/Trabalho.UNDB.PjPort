@@ -29,7 +29,8 @@ while (_loop1)
     Console.WriteLine("Acessa as opções de cadastro");
 
     //Opções de acesso no qual o usuário possa acessar.
-    Console.WriteLine("1- Cadastra\n2-fazer login\n3-Usuarios\n4-esqueceu a senha?\n");
+    Console.WriteLine("1- Cadastra\n2-fazer login\n3-Usuarios\n4-Sair");
+    Console.Write("Opção:");
 
     //Aqui é porcesso de analise do sistema para determinada opção
     int request = Convert.ToInt32(Console.ReadLine());
@@ -109,6 +110,10 @@ while (_loop1)
             Console.ReadKey();//Aqui segura para usuari ver a opções. 
             Console.WriteLine(separar);
             break;
+        
+        case 4: 
+            _loop1 = false;
+            break;
 
         //Validação para caso o usuário pense em colocar um valor não selecionado.
         default:
@@ -124,9 +129,23 @@ while (_loop2)
 {
     // Mensagem de boas vindas.
     Console.WriteLine($"Seja Bem vindo {_user}");
+    bool process = true;
+    while(process){
+        Console.WriteLine("1-Adcionar porto\n2-Editar porto\n3-Lista porto\n4-deletar porto\n5-Sair");
+        int request = Convert.ToInt32(Console.ReadLine());
+
+        switch (request){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            default:
+                break;
+        }
+    }
 
     //Opções de acesso do usuário
-    Console.WriteLine("1-Adcionar porto\n2-");
 
 
     Console.ReadKey();
