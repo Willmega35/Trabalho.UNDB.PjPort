@@ -2,7 +2,7 @@
 using System.ComponentModel.Design;
 using Trabalho.UNDB.PjPort;
 
-string newFile = @"C:\Users\Windows 10\Documents\Trabalho-Csharp\Trabalho-de-Faculdade\Dados\Resister.txt"
+string newFile = @"C:\Users\Windows 10\Documents\Trabalho-Csharp\Trabalho-de-Faculdade\Dados\Resister.txt";
 // Separador para ser usado.
 string separar = "-------------------------------------------------------------------------------";
 
@@ -73,6 +73,14 @@ while (_loop1) {
             //Exibir todos os Usuários cadastrados.
             Console.WriteLine("Usuários Cadastrados:");
             //imprimir os usuários qu que tem 
+            string[] user = Imp.Load(newFile);
+
+            if (user.Length == 0) {
+                Console.WriteLine("Nenhum usuario Cadastrado");
+            }
+            
+            foreach(string line in user)
+                Console.WriteLine(line);
             Console.ReadKey();//Aqui segura para usuari ver a opções. 
             Console.WriteLine(separar);
             break;
