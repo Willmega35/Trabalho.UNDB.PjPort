@@ -1,2 +1,3 @@
 Nome:Willard; Senha:9090
 Nome:Mackley; Senha:admin
+Nome:Hugo; Senha:Willard

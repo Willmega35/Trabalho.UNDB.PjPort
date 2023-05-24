@@ -8,10 +8,6 @@ string separar = "--------------------------------------------------------------
 
 Import Imp = new Import(newFile);
 
-// Aqui vai fica parte dos projetos onde armazena o Usuário e Senha
-List<string> User = new();
-List<string> Password = new();
-
 //Contralador da interface no sistema.
 bool center_Loop = true;
 bool _loop1 = true;
@@ -63,7 +59,7 @@ while (_loop1)
             //Verififica se a pessoa possui ou não, cadastro:
             bool trueSearch = false;
 
-            foreach (string line in User)
+            foreach (string line in Imp.Load(newFile))
             {
                 int firstIndice = line.IndexOf("Nome: ") + "Nome: ".Length;
                 int finishIndice = line.IndexOf(";");
@@ -80,13 +76,14 @@ while (_loop1)
             {
                 Console.WriteLine("Usuario Encontrado com suacesso.");
                 _loop1 = true;
+                _user = userCastr;
             }
             else
             {
                 Console.WriteLine($"O usuário {userCastr}");
             }
 
-            break;
+            return;
 
         case 3:
             string[] user = Imp.Load(newFile);
@@ -125,11 +122,12 @@ while (_loop1)
 while (_loop2)
 {
     // Mensagem de boas vindas.
+    Console.WriteLine($"Seja Bem vindo {_user}");
 
     //Opções de acesso do usuário
 
 
-
+    Console.ReadKey();
 
     _loop2 = false;
 }
