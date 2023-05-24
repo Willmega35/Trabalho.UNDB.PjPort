@@ -2,7 +2,7 @@
 using System.ComponentModel.Design;
 using Trabalho.UNDB.PjPort;
 
-string newFile = @"C:\Users\Windows 10\Documents\Trabalho-Csharp\Trabalho-de-Faculdade\Dados\Resister.txt";
+string newFile = @"D:\Projetos_Github\Trabalho.UNDB.PjPort\Trabalho.UNDB.PjPort\dados\Resister.txt";
 // Separador para ser usado.
 string separar = "-------------------------------------------------------------------------------";
 
@@ -44,14 +44,14 @@ while (_loop1)
     {
         case 1:
             // Inserir os dados de usuario
-            Console.Write("Adicionar um Usuário");
+            Console.Write("Adicionar um Usuário: ");
             string addUser = Console.ReadLine();
             Console.Write("Adicionar Senha:");
             string addPassaword = Console.ReadLine();
             // Ser adicionado ao banco
             Imp.Save(addUser, addPassaword);
             break;
-            
+
 
         case 2:
             //Iserir cadastro do funcionaro
@@ -101,8 +101,10 @@ while (_loop1)
 
             foreach (string line in user)
             {
-                string[] part = line.Split(';');
-                string nameUser = part[0];
+                int firstIndice = line.IndexOf("Nome: ") + "Nome: ".Length;
+                int finishIndice = line.IndexOf(";");
+
+                string nameUser = line.Substring(firstIndice, finishIndice - firstIndice).Trim();
 
                 Console.WriteLine(nameUser);
             }
