@@ -27,7 +27,8 @@ Console.WriteLine("Bem vindo ao controle do porto:");
 Console.WriteLine(separar);
 
 //Primeira tela: tela de acesso de 
-while (_loop1) {
+while (_loop1)
+{
     //Acessa do usuario, recupera a senha e cadastro.
     Console.WriteLine("Acessa as opções de cadastro");
 
@@ -39,7 +40,8 @@ while (_loop1) {
     Console.WriteLine(separar);
 
     //Aqui resposta de cada opção.
-    switch (request) {
+    switch (request)
+    {
         case 1:
             // Inserir os dados de usuario
             Console.Write("Adicionar um Usuário");
@@ -49,6 +51,7 @@ while (_loop1) {
             // Ser adicionado ao banco
             Imp.Save(addUser, addPassaword);
             break;
+            
 
         case 2:
             //Iserir cadastro do funcionaro
@@ -58,15 +61,31 @@ while (_loop1) {
             string passCastr = Console.ReadLine();
 
             //Verififica se a pessoa possui ou não, cadastro:
-            if ((User.Contains(userCastr)) && (Password.Contains(passCastr))) {
-                Console.WriteLine(separar);
-                _user = userCastr;
-                _loop1 = false;
+            bool trueSearch = false;
+
+            foreach (string line in User)
+            {
+                int firstIndice = line.IndexOf("Nome: ") + "Nome: ".Length;
+                int finishIndice = line.IndexOf(";");
+
+                string nameUser = line.Substring(firstIndice, finishIndice - firstIndice).Trim();
+
+                if (nameUser.Contains(userCastr))
+                {
+                    trueSearch = true;
+                    break;
+                }
             }
-            else {
-                Console.WriteLine("Usuário não encontrado.");
-                Console.WriteLine(separar);
+            if (trueSearch)
+            {
+                Console.WriteLine("Usuario Encontrado com suacesso.");
+                _loop1 = true;
             }
+            else
+            {
+                Console.WriteLine($"O usuário {userCastr}");
+            }
+
             break;
 
         case 3:
@@ -75,11 +94,13 @@ while (_loop1) {
             Console.WriteLine($"Usuários Cadastrados: {user.Length}");
             //imprimir os usuários qu que tem 
 
-            if (user.Length == 0) {
+            if (user.Length == 0)
+            {
                 Console.WriteLine("Nenhum usuario Cadastrado");
             }
 
-            foreach (string line in user) {
+            foreach (string line in user)
+            {
                 string[] part = line.Split(';');
                 string nameUser = part[0];
 
@@ -99,7 +120,8 @@ while (_loop1) {
 }
 
 //Tela de usuario: aqui posta o Nome usuario imprimi quais opções ele possui aqui dentro da área.
-while (_loop2) {
+while (_loop2)
+{
     // Mensagem de boas vindas.
 
     //Opções de acesso do usuário
