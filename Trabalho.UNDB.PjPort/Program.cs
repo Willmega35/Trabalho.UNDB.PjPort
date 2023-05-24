@@ -72,9 +72,7 @@ while (_loop1) {
         case 3:
             //Exibir todos os Usuários cadastrados.
             Console.WriteLine("Usuários Cadastrados:");
-            //imprimir os usuários qu que tem registrado
-            foreach (string s in User)
-                Console.WriteLine("\t\t\t" + s);
+            //imprimir os usuários qu que tem 
             Console.ReadKey();//Aqui segura para usuari ver a opções. 
             Console.WriteLine(separar);
             break;
